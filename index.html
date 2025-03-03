@@ -7,16 +7,44 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
             margin: 20px;
             padding: 0;
         }
         .header {
             text-align: center;
             margin-bottom: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #45a049;
         }
         .content {
             max-width: 800px;
             margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
         }
         .info {
             margin-bottom: 20px;
@@ -36,21 +64,54 @@
         .button:hover {
             background-color: #45a049;
         }
+        .image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Welcome to Saketh Chodisetti's 5-Day Boot Camp</h1>
     </div>
+    <div class="nav">
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('camps')">Camps</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </div>
     <div class="content">
-        <div class="info">
-            <h2>Instructor: Saketh Chodisetti</h2>
-            <p>High school sophomore who has completed all French courses and is currently in AP French. Additionally skilled in Python programming.</p>
+        <div id="home" class="section active">
+            <div class="image">
+                <img src="https://www.shutterstock.com/image-vector/translate-french-francais-language-education-learning-2249652685" alt="French Language Image" width="100%">
+            </div>
+            <div class="info">
+                <h2>Instructor: Saketh Chodisetti</h2>
+                <p>High school sophomore who has completed all French courses and is currently in AP French. Additionally skilled in Python programming.</p>
+            </div>
         </div>
-        <div class="register">
-            <h2>Register for the Boot Camp</h2>
-            <p>Click the link below to register for the 5-day boot camp:</p>
-            <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="button">Register Now</a>
+        <div id="camps" class="section">
+            <div class="register">
+                <h2>Register for the Boot Camp</h2>
+                <p>Click the link below to register for the 5-day boot camp:</p>
+                <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="button">Register Now</a>
+            </div>
+        </div>
+        <div id="contact" class="section">
+            <div class="contact">
+                <h2>Contact</h2>
+                <p>Name: Saketh Chodisetti</p>
+            </div>
         </div>
     </div>
-</body>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
