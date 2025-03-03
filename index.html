@@ -3,115 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saketh Chodisetti's Boot Camp</title>
+    <title>Build Your Skill Bootcamp</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 20px;
-            padding: 0;
+            background-image: url('your-ai-generated-image-url-here'); /* Replace this URL with your image URL */
+            background-size: cover;
+            color: #333;
+            margin: 0;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            background-color: #4CAF50;
-            color: white;
+        .container {
             padding: 20px;
-            border-radius: 10px;
-        }
-        .nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-        .nav a:hover {
-            color: #45a049;
-        }
-        .content {
+            background-color: rgba(255, 255, 255, 0.8);
             max-width: 800px;
             margin: auto;
-            background-color: #ffffff;
-            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-        }
-        .info {
+        .tabs {
+            display: flex;
+            justify-content: space-around;
             margin-bottom: 20px;
         }
-        .register {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .button {
-            display: inline-block;
+        .tab {
             padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .button:hover {
-            background-color: #45a049;
+        .tab:hover {
+            background-color: #e0e0e0;
         }
-        .image {
-            text-align: center;
-            margin-bottom: 20px;
+        .tab-content {
+            display: none;
         }
-        .contact {
-            text-align: center;
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content form {
+            display: flex;
+            flex-direction: column;
+        }
+        .tab-content form input, .tab-content form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome to Saketh Chodisetti's 5-Day Boot Camp</h1>
-    </div>
-    <div class="nav">
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('camps')">Camps</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
-    </div>
-    <div class="content">
-        <div id="home" class="section active">
-            <div class="image">
-                <img src="https://www.shutterstock.com/image-vector/translate-french-francais-language-education-learning-2249652685" alt="French Language Image" width="100%">
-            </div>
-            <div class="info">
-                <h2>Instructor: Saketh Chodisetti</h2>
-                <p>High school sophomore who has completed all French courses and is currently in AP French. Additionally skilled in Python programming.</p>
-            </div>
+    <div class="container">
+        <h1>Welcome to Build Your Skill 5-Day Bootcamp for French and Python</h1>
+        <p>My name is Saketh Chodisetti, a high school sophomore who is eager to help upcoming kids make it easy for new languages.</p>
+        <p>Qualifications: Completed all French courses in the academic year. Participated in multiple bootcamps, aimed to pursue endorsement in computer science.</p>
+        <div class="tabs">
+            <div class="tab" onclick="showTab('bootcamp')">Bootcamp</div>
+            <div class="tab" onclick="showTab('contact')">Contact Us</div>
         </div>
-        <div id="camps" class="section">
-            <div class="register">
-                <h2>Register for the Boot Camp</h2>
-                <p>Click the link below to register for the 5-day boot camp:</p>
-                <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="button">Register Now</a>
-            </div>
+        <div id="bootcamp" class="tab-content">
+            <h2>Bootcamp Selectives</h2>
+            <ul>
+                <li><a href="your-google-form-url-for-french">French</a></li>
+                <li><a href="your-google-form-url-for-python">Python</a></li>
+            </ul>
         </div>
-        <div id="contact" class="section">
-            <div class="contact">
-                <h2>Contact</h2>
-                <p>Name: Saketh Chodisetti</p>
-            </div>
+        <div id="contact" class="tab-content">
+            <h2>Contact Us</h2>
+            <form action="your-contact-form-url" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send">
+            </form>
         </div>
     </div>
     <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+        function showTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
         }
+        // Show the Bootcamp tab by default
+        showTab('bootcamp');
     </script>
+</body>
+</html>
